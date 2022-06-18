@@ -32,11 +32,13 @@ export default {
 .turn-page {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #f9957f 5%, #f2f5d0);
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 500%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: backMove 10s linear infinite;
 
   h2,
   h3 {
@@ -44,4 +46,17 @@ export default {
     color: rgba($color: #fff, $alpha: 0.8);
   }
 }
+
+@keyframes backMove {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 </style>
