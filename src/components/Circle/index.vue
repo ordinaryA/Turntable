@@ -1,6 +1,7 @@
 <template>
   <div class="circle-wrap" :style="{ transform: `rotate(-${getDeg()}deg)` }">
-    <div
+    <div @click="testFn">{{ test }}</div>
+    <!-- <div
       class="reward-item"
       v-for="item in reward"
       :key="item.value"
@@ -12,12 +13,15 @@
       class="center-circle"
       @click="getResult"
       :style="{ transform: `rotate(${rotating}deg)` }"
-    ></div>
+    ></div> -->
   </div>
 </template>
 
 <script setup>
 import { ref, defineExpose, onMounted, computed, watch } from "vue";
+import { useTest } from "../../views/Turntable/test";
+
+const { test, testFn } = useTest();
 
 const reward = ref([
   { value: 1, label: "一" },
@@ -122,7 +126,7 @@ defineExpose({ rewardReslut, reward });
 <style lang="scss">
 $circleBackgroundColor: rgba(
   $color: #aebaf8,
-  $alpha: 0.3,
+  $alpha: 0.1,
 );
 $pointColor: rgba(
   $color: #f6e6bc,
