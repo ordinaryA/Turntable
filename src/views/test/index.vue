@@ -38,6 +38,7 @@ export default {
       );
     };
     helper();
+    const test = "test code";
     return { testFn };
   },
 };
